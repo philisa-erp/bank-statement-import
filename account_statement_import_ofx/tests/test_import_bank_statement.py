@@ -32,10 +32,9 @@ class TestOfxFile(common.TransactionCase):
             company.account_journal_suspense_account_id = suspense_account
         bank = cls.env["res.partner.bank"].create(
             {
-                "acc_number": "123456",
+                "account_number": "123456",
                 "partner_id": cls.env.ref("base.main_partner").id,
                 "company_id": company.id,
-                "bank_id": cls.env.ref("base.res_bank_1").id,
             }
         )
         cls.env["account.journal"].create(
@@ -49,10 +48,9 @@ class TestOfxFile(common.TransactionCase):
         )
         bank_iban_ofx = cls.env["res.partner.bank"].create(
             {
-                "acc_number": "12345678901",
+                "account_number": "12345678901",
                 "partner_id": cls.env.ref("base.main_partner").id,
                 "company_id": company.id,
-                "bank_id": cls.env.ref("base.res_bank_1").id,
             }
         )
         cls.env["account.journal"].create(
